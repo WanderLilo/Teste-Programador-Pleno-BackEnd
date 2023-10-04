@@ -41,4 +41,4 @@ Desenvolver uma api com WebSocket usando signalr, conectando os dois servidores 
 
 Todas as tarefas da api é necessario a documentação em Swagger.
 
-Enviar o link do fork no email williambatista@cpagricola.com.br
+Enviar o link do fork no email william.batista@agrocp.agr.br
