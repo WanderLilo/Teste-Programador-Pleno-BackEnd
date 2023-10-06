@@ -1,0 +1,42 @@
+CONFIGURAÇÃO DAS API (Arquivo AppSettings.Json) - Configurar as chaves abaixo conforme necessário.
+DefaultConnection = string de conexão com banco de dados.
+UrlApiCidade = Configurada somente na api Tarefa-3. Usada para configurar o endpoint da api Tarefa-2, o qual verifica se a cidade existe quando estiver incluindo uma nova pessoa.
+
+
+Referente ao desenvolvimento destas APIs especificas, devido os requisitos serem de baixa complexidade, daria e até seria o melhor caminho fazer tudo em único projeto de Web API.
+
+Conforme conversa anterior, sobre fazer de forma simples ou aplicar o conhecimento. Ficou definido aplicar o conhecimento.
+
+Para fins de demonstrar conhecimento foi aplicado conceitos de Clean Archictecture, Clean Code, Solid, Injeção de Dependências, Padrões de Projeto(Repository, Service, UnitOfWork, DTO, etc), Migrations, Fluent API(para mapear as entidades para o banco de dados)
+
+
+Referente arquitetura utilizei Clean Archictecture, sendo as camadas:
+ApplicationCore = Onde ficam somente coisas relacionadas ao negócio. Exemplo entidades, interfaces, services relacionados ao negócio, DTOs,etc
+Infrastructure = Fica a parte relacionada a acesso a dados e outras coisas como integração com equipamentos ou outras tecnologias dependente de terceiros ou frameworks externos.
+API = Onde fica os endpoints, com responsabilidade única de fazer conversões json, receber o dados, retornar dados com o respectivo código de retorno adequado.
+
+
+Referente SOLID
+S(Responsabilidade Unica), para manter classes e metodos curtos e com um único objetivo, facilitando manutenção.
+O(Aberto para extensão, fechado modificação), através da utilização de interfaces.
+L(Substituição de liskov), através do uso de interfaces consigo substituir por qualquer classe que implemente a interface esperada.
+I(Segregação de interface) pequenas interfaces
+D(Inversão de Dependência) - a classe que tem dependências, recebe todas dependências no construtor. Alcançando baixo acoplamento e alta coesão.
+
+
+Referente Injeção de Dependência
+Feito através do mecanismo de injeção de dependência nativo do .net, usando metodos como AddScoped, AddTransient, AddSingleton.
+
+
+Referente Padrões de Projeto
+Repository - para isolar a parte de acesso a dados. Facilitando uma possível mudança de tecnologia de acesso a dados.
+Service - para isolar as regras de negócio
+UnitOfWork - para gerenciar transações.
+DTO - para manter a boa pratica não poluindo entidades de negócio, aplicando validações através de Data Annotations. Possibilidando retornar
+somente um subconjunto de dados, exemplo uma entidade de negocio que tem 100 propriedades, mas deve retornar só 20 propriedades na consulta. Ou mesmo no retorno de informações sensiveis, exemplo uma senha não deveria ser retornada numa consulta.
+
+
+Devido não estar nos requisitos e ao prazo também, não foi aplicado conceitos de Autenticação e Autorização. Podendo ser feito através de Identity, Jwt, Roles, Claims num cenário real.
+
+
+
