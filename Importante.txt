@@ -4,6 +4,11 @@ UrlApiCidade = Configurada somente na api Tarefa-3. Usada para configurar o endp
 existe quando estiver incluindo uma nova pessoa.
 
 
+Caso de algum Erro de Certificado SSL (Comando usado para tornar o cerficado SSL de desenvolvedor confiavel)
+-Entrar PowerShell
+-Executar comando dotnet dev-certs https --trust
+
+
 Referente ao desenvolvimento destas APIs especificas, devido os requisitos serem de baixa complexidade, daria e até seria o melhor 
 caminho fazer tudo em único projeto de Web API.
 
